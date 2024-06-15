@@ -1,0 +1,19 @@
+{
+  "name": "ecs-rox",
+  "version": "1.0.0",
+  "description": "\"minimal ecs to rox-engine\"",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/arejano/ecs-rox.git"
+  },
+  "author": "Gustavo Arejano",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/arejano/ecs-rox/issues"
+  },
+  "homepage": "https://github.com/arejano/ecs-rox#readme"
+}
