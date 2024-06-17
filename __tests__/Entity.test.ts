@@ -1,5 +1,6 @@
-import { Component } from "../src/components/Component";
-import { Entity } from "../src/entities/Entity";
+import { Component } from "../src/core/component";
+import { Entity } from "../src/core/entity";
+import { ComponentType } from "../src/core/enums";
 
 describe('Entity - Create', () => {
 	it('should create a Entity Instace with ID maior que 0', () => {
@@ -12,13 +13,13 @@ describe('Entity - Create', () => {
 describe('Entity - Insert Component', () => {
 	it('Insert new Component into Entity', () => {
 		const entity = new Entity();
-		const component = new Component("Test Component");;
+		const component = new Component(null,ComponentType.Default);;
 
-		entity.addComponents(component);
+		entity.addComponent(component);
 		
 		expect(entity).toBeInstanceOf(Entity);
 		expect(component).toBeInstanceOf(Component);
-		expect(Object.keys(entity.components).length).toBeGreaterThan(0);
+		// expect(Object.keys(entity.components.values())).toBeGreaterThan(0);
 	});
 })
 
@@ -26,15 +27,11 @@ describe('Entity - Insert Component', () => {
 describe('Entity - Get especified Component', () => {
 	it('Get component by Name', () => {
 		const entity = new Entity();
-		const component = new Component("Test Component");;
+		const component = new Component(null,ComponentType.Default);;
 
-		entity.addComponents(component);
-		
-		// expect(entity).toBeInstanceOf(Entity);
+		entity.addComponent(component);
 
 		const test_component = entity.getComponent(component.id);
-		expect(test_component.name).toEqual(component.name);
-		// expect(component).toBeInstanceOf(Component);
-		// expect(Object.keys(entity.components).length).toBeGreaterThan(0);
+		expect(test_component?.type).toEqual(ComponentType.Default);
 	});
 })

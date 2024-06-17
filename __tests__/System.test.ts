@@ -1,9 +1,10 @@
-import { System } from "../src/systems/System";
+import { GameState } from "../src/core/enums";
+import { System } from "../src/core/system";
 
-describe('Component', () => {
-	it('should create a Entity Instace with ID maior que 0', () => {
-		const entity = new System();
-		expect(entity).toBeInstanceOf(System);
+describe('System', () => {
+	it('should create a System Instace', () => {
+		const system = new System(GameState.Menu, []);
+		expect(system).toBeInstanceOf(System);
 	});
 })
 
